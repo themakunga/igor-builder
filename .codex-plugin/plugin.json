@@ -1,6 +1,6 @@
 {
   "name": "igor-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tu asistente para crear tus propios monstruos: repositorios GitHub o GitLab con calidad, seguridad, lint y release GitFlow deshabilitado.",
   "skills": "./skills/"
 }

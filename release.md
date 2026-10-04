@@ -2,6 +2,15 @@
 
 Este archivo contiene las notas que el workflow publica para cada versión. La versión debe coincidir en los manifiestos de Codex, Claude Code y `package.json`. Las releases existentes no se sobrescriben.
 
+## 1.0.1
+
+- Renombrado el plugin a `igor-builder`.
+- Añadido soporte de toolchain para Go, OpenTofu, Docker, Argo CD, Argo Workflows, Kubernetes, Helm, Nix, PHP, Ruby, Swift, Bash, Pulumi y Jenkins en `references/tech.md`.
+- Config de Prettier migrada de JSON a YAML (`.prettierrc.yaml`).
+- Añadido commitlint con Conventional Commits (`.commitlintrc.yaml`) y hook `commit-msg` en pre-commit.
+- Release workflow disparado desde rama `release/v*` en lugar de tags.
+- Añadidos `LICENSE` (MIT), `CONTRIBUTING.md` y `CODE_OF_CONDUCT.md`.
+
 ## 1.0.0
 
 - Skill compartido para Codex y Claude Code.
