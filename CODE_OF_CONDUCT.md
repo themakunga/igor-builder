@@ -19,7 +19,7 @@ Ejemplos de comportamiento que contribuyen a un entorno positivo:
 Ejemplos de comportamiento inaceptable:
 
 - Uso de lenguaje o imágenes sexualizadas, y atención o insinuaciones sexuales de cualquier tipo.
-- Comentarios despectivos (*trolling*), insultantes o derogatorios, y ataques personales o políticos.
+- Comentarios despectivos (_trolling_), insultantes o derogatorios, y ataques personales o políticos.
 - Acoso público o privado.
 - Publicar información privada de otras personas, como direcciones físicas o de correo electrónico, sin su permiso explícito.
 - Cualquier otra conducta que razonablemente podría considerarse inapropiada en un entorno profesional.
@@ -28,7 +28,7 @@ Ejemplos de comportamiento inaceptable:
 
 Los administradores del proyecto son responsables de aclarar y hacer cumplir estos estándares de comportamiento aceptable, y tomarán medidas correctivas apropiadas y justas en respuesta a cualquier comportamiento que consideren inapropiado, amenazante, ofensivo o perjudicial.
 
-Los administradores tienen el derecho y la responsabilidad de eliminar, editar o rechazar comentarios, *commits*, código, ediciones de páginas de wiki, *issues* y otras contribuciones que no se alineen con este Código de Conducta, y comunicarán las razones de las decisiones de moderación cuando sea apropiado.
+Los administradores tienen el derecho y la responsabilidad de eliminar, editar o rechazar comentarios, _commits_, código, ediciones de páginas de wiki, _issues_ y otras contribuciones que no se alineen con este Código de Conducta, y comunicarán las razones de las decisiones de moderación cuando sea apropiado.
 
 ## Alcance
 

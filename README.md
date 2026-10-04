@@ -1,6 +1,6 @@
 # igor-builder
 
-> *"Could be worse. Could be raining."* — Igor
+> _"Could be worse. Could be raining."_ — Igor
 
 Plugin con un skill compartido para Codex y Claude Code que te ayuda a crear tus propios monstruos: repositorios GitHub o GitLab con una base de calidad, lint, seguridad y GitFlow deshabilitado.
 
@@ -8,16 +8,16 @@ El skill pregunta nombre, lenguaje/stack y proveedor Git; resuelve propietario y
 
 ## Stacks soportados
 
-| Categoría | Tecnologías |
-|---|---|
-| **Lenguajes** | Go · TypeScript · JavaScript · Python · PHP · Ruby · Swift · Bash |
-| **Frontend** | Vue.js · Nuxt.js · Node.js · Express.js |
-| **IaC** | Terraform · OpenTofu · Pulumi |
-| **Contenedores** | Docker · Kubernetes · Helm · Kustomize |
-| **GitOps** | Argo CD · Argo Workflows |
-| **Plataformas** | Nix · NixOS · Jenkins (Jenkinsfile) |
-| **Cloud** | AWS · GCP · Heroku |
-| **Bases de datos** | PostgreSQL · MySQL · MongoDB · Redis · Firebase |
+| Categoría          | Tecnologías                                                       |
+| ------------------ | ----------------------------------------------------------------- |
+| **Lenguajes**      | Go · TypeScript · JavaScript · Python · PHP · Ruby · Swift · Bash |
+| **Frontend**       | Vue.js · Nuxt.js · Node.js · Express.js                           |
+| **IaC**            | Terraform · OpenTofu · Pulumi                                     |
+| **Contenedores**   | Docker · Kubernetes · Helm · Kustomize                            |
+| **GitOps**         | Argo CD · Argo Workflows                                          |
+| **Plataformas**    | Nix · NixOS · Jenkins (Jenkinsfile)                               |
+| **Cloud**          | AWS · GCP · Heroku                                                |
+| **Bases de datos** | PostgreSQL · MySQL · MongoDB · Redis · Firebase                   |
 
 Cada stack incluye formato, lint, tests, SAST y auditoría de dependencias adaptados; consulta [`skills/igor-builder/references/tech.md`](skills/igor-builder/references/tech.md) para las herramientas exactas por tecnología.
 
@@ -76,8 +76,9 @@ Usa $igor-builder para crear un repositorio llamado my-api.
 Para cada proyecto crea localmente y luego publica en el proveedor elegido:
 
 - `README.md` con instalación, comandos de checks y flujo GitFlow
-- `.editorconfig`, `.prettierrc.json`, `.prettierignore`, `.gitignore`
-- `.pre-commit-config.yaml` con hooks de formato, lint, secretos y YAML
+- `.editorconfig`, `.prettierrc.yaml`, `.prettierignore`, `.gitignore`
+- `.commitlintrc.yaml` con Conventional Commits
+- `.pre-commit-config.yaml` con hooks de formato, lint, secretos, YAML y commitlint en stage `commit-msg`
 - Manifiesto y lockfile del ecosistema, fuente mínima y prueba de humo
 - Pipeline activo (GitHub Actions o GitLab CI) que ejecuta todos los checks en cada push y en PR/MR
 - Plantilla de release inactiva en `ci/templates/` (nunca conectada al pipeline inicial)
@@ -96,7 +97,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements-dev.txt
 npm ci
-pre-commit install
+pre-commit install --install-hooks
 pre-commit run --all-files
 npm audit --audit-level=low
 pip-audit -r requirements-dev.txt

@@ -2,8 +2,8 @@ name: Release plugin
 
 on:
   push:
-    tags:
-      - "v*"
+    branches:
+      - "release/v*"
 
 permissions:
   contents: read
@@ -28,12 +28,12 @@ jobs:
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: "3.13"
-      - name: Validate tag and membership in main
+      - name: Validate version and build package
         env:
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
-          python scripts/check_plugin.py --tag "$RELEASE_TAG" --package
-          git merge-base --is-ancestor HEAD origin/main
+          VERSION="${RELEASE_TAG#release/}"
+          python scripts/check_plugin.py --tag "$VERSION" --package
       - name: Extract version notes
         env:
           RELEASE_TAG: ${{ github.ref_name }}
@@ -42,7 +42,7 @@ jobs:
           import os
           from pathlib import Path
 
-          version = os.environ["RELEASE_TAG"][1:]
+          version = os.environ["RELEASE_TAG"].removeprefix("release/v")
           text = Path("release.md").read_text()
           notes = text.split(f"## {version}\n", 1)[1].split("\n## ", 1)[0].strip()
           if not notes:
@@ -55,7 +55,8 @@ jobs:
           GH_REPO: ${{ github.repository }}
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
-          gh release create "$RELEASE_TAG" \
-            "dist/igor-builder-${RELEASE_TAG#v}.zip" dist/SHA256SUMS \
-            --verify-tag --title "igor-builder $RELEASE_TAG" \
+          VERSION="${RELEASE_TAG#release/}"
+          gh release create "$VERSION" \
+            "dist/igor-builder-${VERSION#v}.zip" dist/SHA256SUMS \
+            --title "igor-builder $VERSION" \
             --notes-file dist/notes.md

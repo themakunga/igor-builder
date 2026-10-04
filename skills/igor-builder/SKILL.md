@@ -26,7 +26,7 @@ Genera primero un proyecto mínimo en una carpeta nueva y revisable. No iniciali
 Adapta herramientas al lenguaje sin crear una aplicación completa. Incluye:
 
 - README con instalación, comandos de checks, funcionamiento de CI y flujo GitFlow.
-- `.gitignore`, `.editorconfig`, `.prettierrc.json`, `.prettierignore` y `.pre-commit-config.yaml`.
+- `.gitignore`, `.editorconfig`, `.prettierrc.yaml`, `.prettierignore`, `.commitlintrc.yaml` y `.pre-commit-config.yaml`.
 - Manifiesto y lockfile del ecosistema, fuente mínima y una prueba de humo cuando el lenguaje lo permita.
 - Configuración real de formato, lint, tests/typecheck o compilación, escaneo de secretos, SAST y auditoría de dependencias.
 - Pipeline activo que ejecute todos esos checks en **cada push a cualquier rama** y también en pull/merge requests.
