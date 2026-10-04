@@ -1,0 +1,6 @@
+interface:
+  display_name: "Crear repositorio con CI"
+  short_description: "Repositorios con calidad, seguridad y GitFlow"
+  default_prompt: "Usa $igor-builder para crear un repositorio y preguntarme nombre, lenguaje y proveedor Git."
+policy:
+  allow_implicit_invocation: true

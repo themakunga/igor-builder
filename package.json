@@ -1,0 +1,13 @@
+{
+  "name": "igor-builder",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Herramientas de formato del plugin igor-builder",
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
+  }
+}
