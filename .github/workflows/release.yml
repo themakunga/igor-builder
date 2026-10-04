@@ -28,34 +28,29 @@ jobs:
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: "3.13"
-      - name: Validate version and build package
-        env:
-          RELEASE_TAG: ${{ github.ref_name }}
+      - name: Validate and build package
         run: |
-          VERSION="${RELEASE_TAG#release/}"
-          python scripts/check_plugin.py --tag "$VERSION" --package
+          python scripts/check_plugin.py --package
       - name: Extract version notes
-        env:
-          RELEASE_TAG: ${{ github.ref_name }}
         run: |
           python - <<'PY'
-          import os
+          import json
           from pathlib import Path
 
-          version = os.environ["RELEASE_TAG"].removeprefix("release/v")
+          version = json.loads(Path(".codex-plugin/plugin.json").read_text())["version"]
           text = Path("release.md").read_text()
           notes = text.split(f"## {version}\n", 1)[1].split("\n## ", 1)[0].strip()
           if not notes:
               raise SystemExit("Release notes must not be empty")
           Path("dist/notes.md").write_text(notes + "\n")
+          Path("dist/version").write_text(version)
           PY
       - name: Publish ZIP and checksum to GitHub Releases
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
-          RELEASE_TAG: ${{ github.ref_name }}
         run: |
-          VERSION="${RELEASE_TAG#release/}"
+          VERSION="v$(cat dist/version)"
           gh release create "$VERSION" \
             "dist/igor-builder-${VERSION#v}.zip" dist/SHA256SUMS \
             --title "igor-builder $VERSION" \
