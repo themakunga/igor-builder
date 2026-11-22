@@ -1,5 +1,9 @@
 # igor-builder
 
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Markdown](https://img.shields.io/badge/Markdown-000000?style=flat-square&logo=markdown&logoColor=white)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
+
 > _"Could be worse. Could be raining."_ — Igor
 
 Plugin con un skill compartido para Codex y Claude Code que te ayuda a crear tus propios monstruos: repositorios GitHub o GitLab con una base de calidad, lint, seguridad y GitFlow deshabilitado.
