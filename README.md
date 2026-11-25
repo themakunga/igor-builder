@@ -1,5 +1,9 @@
 # igor-builder
 
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Markdown](https://img.shields.io/badge/Markdown-000000?style=flat-square&logo=markdown&logoColor=white)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
+
 > _"Could be worse. Could be raining."_ — Igor
 
 Plugin con un skill compartido para Codex y Claude Code que te ayuda a crear tus propios monstruos: repositorios GitHub o GitLab con una base de calidad, lint, seguridad y GitFlow deshabilitado.
@@ -115,3 +119,15 @@ CI se ejecuta en cada push a cualquier rama y en pull requests, sin filtros. Ver
 El workflow `release.yml` de **este plugin** está habilitado para tags `vX.Y.Z` y publica el ZIP en GitHub Releases. Consulta [`release.md`](release.md) para el proceso GitFlow y permisos. Las plantillas de release que el skill genera en otros repositorios permanecen deshabilitadas hasta que el usuario las activa.
 
 Distribuido bajo la [licencia MIT](LICENSE). Las contribuciones se rigen por las guías en [CONTRIBUTING.md](CONTRIBUTING.md) y el [Código de Conducta](CODE_OF_CONDUCT.md).
+
+## Repository reference
+
+| Path                                 | Purpose                                     |
+| ------------------------------------ | ------------------------------------------- |
+| [`skills/`](skills/)                 | Agent skills and their supporting resources |
+| [`scripts/`](scripts/)               | Maintenance and validation commands         |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | Contribution guidelines                     |
+| [`release.md`](release.md)           | Project reference                           |
+
+The default branch is `main`. Use the tracked manifests and scripts above
+when preparing changes; keep local credentials and generated files out of commits.
